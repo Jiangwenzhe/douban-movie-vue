@@ -4,6 +4,7 @@
     <Panel
       title="test"
     ></Panel>
+
   </main>
   <footer class="backdrop-blur">
     <div class="active">
@@ -20,7 +21,6 @@
     </div>
   </footer>
 </div>
-
 </template>
 
 <script>
@@ -29,6 +29,11 @@ export default {
   name: 'Tabs',
   components: {
     Panel,
+  },
+  data() {
+    return {
+      currentView: ''
+    }
   }
 }
 </script>
