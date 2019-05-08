@@ -1,9 +1,7 @@
 <template>
 <div>
   <main>
-    <Panel
-      title="test"
-    ></Panel>
+    <Top250></Top250>
 
   </main>
   <footer class="backdrop-blur">
@@ -24,11 +22,11 @@
 </template>
 
 <script>
-import Panel from './Panel'
+import Top250 from './Top250'
 export default {
   name: 'Tabs',
   components: {
-    Panel,
+    Top250,
   },
   data() {
     return {
