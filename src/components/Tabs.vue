@@ -2,7 +2,8 @@
 <div>
   <main>
     <Top250></Top250>
-
+    <InTheater></InTheater>
+    <SearchMovie></SearchMovie>
   </main>
   <footer class="backdrop-blur">
     <div class="active">
@@ -23,10 +24,14 @@
 
 <script>
 import Top250 from './Top250'
+import InTheater from './InTheater'
+import SearchMovie from './SearchMovie'
 export default {
   name: 'Tabs',
   components: {
     Top250,
+    InTheater,
+    SearchMovie
   },
   data() {
     return {
