@@ -1,5 +1,5 @@
 <template>
-  <Panel title="Top250"></Panel>
+  <Panel :title="title"></Panel>
 </template>
 
 <script>
