@@ -1,20 +1,22 @@
 <template>
 <div>
   <main>
-    <Top250></Top250>
-    <InTheater></InTheater>
-    <SearchMovie></SearchMovie>
+    <transition name="fade">
+      <keep-alive>
+        <component :is="currentTab"></component>
+      </keep-alive>
+    </transition>
   </main>
   <footer class="backdrop-blur">
-    <div class="active">
+    <div class="active" @click="toggleTab('Top250')">
       <span class="iconfont icon-paihangbang"></span>
       <span>排行榜</span>
     </div>
-    <div>
+    <div @click="toggleTab('InTheater')">
       <span class="iconfont icon-dianying"></span>
       <span>正在上映</span>
     </div>
-    <div>
+    <div @click="toggleTab('SearchMovie')">
       <span class="iconfont icon-search"></span>
       <span>搜索</span>
     </div>
@@ -35,7 +37,12 @@ export default {
   },
   data() {
     return {
-      currentView: ''
+      currentTab: 'Top250'
+    }
+  },
+  methods: {
+    toggleTab: function(tab) {
+      this.currentTab = tab
     }
   }
 }
@@ -58,6 +65,12 @@ main {
   .loading .iconfont {
     display: inline-block;
     animation: .7s rotate linear infinite;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .4s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 }
 
