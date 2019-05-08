@@ -8,7 +8,6 @@
     ></Card>
   </div>
 </template>
-
 <script>
 import Card from './Card'
 import in_theater from './../assets/in_theater.json'
