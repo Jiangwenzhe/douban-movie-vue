@@ -1,5 +1,5 @@
 # douban-movie-vue
-
+* 一个使用豆瓣api的vue入门应用
 ## Project setup
 ```
 yarn install
@@ -24,6 +24,3 @@ yarn run test
 ```
 yarn run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
