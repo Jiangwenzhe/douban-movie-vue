@@ -1,0 +1,79 @@
+{
+  "rating": {
+      "max": 10,
+      "average": 8.6,
+      "stars": "45",
+      "min": 0
+  },
+  "genres": [
+      "动作",
+      "科幻",
+      "奇幻"
+  ],
+  "title": "复仇者联盟4：终局之战",
+  "casts": [
+      {
+          "alt": "https://movie.douban.com/celebrity/1016681/",
+          "avatars": {
+              "small": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p56339.jpg",
+              "large": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p56339.jpg",
+              "medium": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p56339.jpg"
+          },
+          "name": "小罗伯特·唐尼",
+          "id": "1016681"
+      },
+      {
+          "alt": "https://movie.douban.com/celebrity/1017885/",
+          "avatars": {
+              "small": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1359877729.49.jpg",
+              "large": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1359877729.49.jpg",
+              "medium": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1359877729.49.jpg"
+          },
+          "name": "克里斯·埃文斯",
+          "id": "1017885"
+      },
+      {
+          "alt": "https://movie.douban.com/celebrity/1040505/",
+          "avatars": {
+              "small": "https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p15885.jpg",
+              "large": "https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p15885.jpg",
+              "medium": "https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p15885.jpg"
+          },
+          "name": "马克·鲁弗洛",
+          "id": "1040505"
+      }
+  ],
+  "collect_count": 589271,
+  "original_title": "Avengers: Endgame",
+  "subtype": "movie",
+  "directors": [
+      {
+          "alt": "https://movie.douban.com/celebrity/1321812/",
+          "avatars": {
+              "small": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555672594.77.jpg",
+              "large": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555672594.77.jpg",
+              "medium": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1555672594.77.jpg"
+          },
+          "name": "安东尼·罗素",
+          "id": "1321812"
+      },
+      {
+          "alt": "https://movie.douban.com/celebrity/1320870/",
+          "avatars": {
+              "small": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1525505053.79.jpg",
+              "large": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1525505053.79.jpg",
+              "medium": "https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1525505053.79.jpg"
+          },
+          "name": "乔·罗素",
+          "id": "1320870"
+      }
+  ],
+  "year": "2019",
+  "images": {
+      "small": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552058346.jpg",
+      "large": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552058346.jpg",
+      "medium": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552058346.jpg"
+  },
+  "alt": "https://movie.douban.com/subject/26100958/",
+  "id": "26100958"
+}
