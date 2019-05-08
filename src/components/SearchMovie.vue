@@ -1,5 +1,5 @@
 <template>
-  <Panel title="title"></Panel>
+  <Panel :title="title"></Panel>
 </template>
 
 <script>
