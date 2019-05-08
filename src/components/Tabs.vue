@@ -3,8 +3,6 @@
   <Panel
     title="test"
   ></Panel>
-  <div>
-  </div>
 </div>
 </template>
 
