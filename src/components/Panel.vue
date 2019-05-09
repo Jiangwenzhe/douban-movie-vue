@@ -18,6 +18,9 @@ export default {
     title: {
       type: String,
       default: "In_theater"
+    },
+    requestURL:{
+
     }
   },
   components: {
@@ -27,6 +30,9 @@ export default {
     return {
       panel_data: {}
     }
+  },
+  methods() {
+
   },
   mounted() {
     this.panel_data = in_theater
