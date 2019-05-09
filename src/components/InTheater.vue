@@ -15,8 +15,22 @@ export default {
   data() {
     return {
       title: 'InTheater',
-      url: 'https://api.douban.com/v2/movie/in_theaters'
+      url: 'https://api.douban.com/v2/movie/in_theaters',
+      scrollPosition: 0
     }
+  },
+  methods: {
+    setScrollPosition() {
+      this.scrollPosition =  document.documentElement.scrollTop
+    }
+  },
+  activated() {
+    console.log(this.title)
+    document.documentElement.scrollTop = this.scrollPosition
+  },
+  deactivated() {
+    this.setScrollPosition()
+    console.log(this.scrollPosition)
   }
 }
 </script>
