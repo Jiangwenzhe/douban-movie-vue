@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      title: 'InTheater',
+      title: '',
       url: 'https://api.douban.com/v2/movie/in_theaters',
       scrollPosition: 0
     }

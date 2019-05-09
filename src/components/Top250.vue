@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      title: 'Top2501',
+      title: '',
       url: 'https://api.douban.com/v2/movie/top250',
       scrollPosition: 0
     }
