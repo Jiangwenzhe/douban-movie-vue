@@ -6,6 +6,7 @@
       :key="index"
       :movie_data="data"
     ></Card>
+    <div class="loading"><span class="iconfont icon-jiazai_dan"></span></div>
   </div>
 </template>
 <script>
@@ -33,20 +34,21 @@ export default {
       start: 0,
       count: 20,
       hasMore: true,
-      scrolledToBottom: false
+      scrolledToBottom: false,
     }
   },
   methods: {
+
     handleScroll(){
-      window.onscroll = () => {
-        let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+        let scrollPosition_Y = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop)
+        let bottomOfWindow = scrollPosition_Y + window.innerHeight === document.documentElement.offsetHeight
         if (bottomOfWindow) {
          this.scrolledToBottom = true
          console.log('--- at buttom ---')
+         console.log('------', this.title, '----获取到数据')
          this.getMovieData(`${this.requestURL}?start=${this.start}&count=${this.count}`)
         }
         this.scrolledToBottom = false
-      }
     },
     getMovieData(url) {
       console.log(url)
@@ -71,11 +73,28 @@ export default {
   },
   mounted() {
     this.getMovieData(`${this.requestURL}?start=${this.start}&count=${this.count}`)
-    this.handleScroll()
+  },
+  activated() {
+    console.log('--- enter ----', this.title)
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .loading {
+    text-align: center;
+    font-size: 16px;
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .iconfont {
+      display: inline-block;
+      animation: .7s rotate linear infinite;
+    }
+  }
 </style>
