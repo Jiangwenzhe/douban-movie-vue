@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <Card
-      v-for="(data, index) in panel_data.subjects"
+      v-for="(data, index) in panel_data"
       :key="index"
       :movie_data="data"
     ></Card>
@@ -10,7 +10,6 @@
 </template>
 <script>
 import Card from './Card'
-import in_theater from './../assets/in_theater.json'
 import jsonp from 'jsonp'
 
 export default {
@@ -30,14 +29,26 @@ export default {
   },
   data() {
     return {
-      panel_data: {},
+      panel_data: [],
       start: 0,
       count: 20,
-      hasMore: true
+      hasMore: true,
+      scrolledToBottom: false
     }
   },
   methods: {
-    getMovieData: function(url) {
+    handleScroll(){
+      window.onscroll = () => {
+        let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+        if (bottomOfWindow) {
+         this.scrolledToBottom = true
+         console.log('--- at buttom ---')
+         this.getMovieData(`${this.requestURL}?start=${this.start}&count=${this.count}`)
+        }
+        this.scrolledToBottom = false
+      }
+    },
+    getMovieData(url) {
       console.log(url)
       if(this.hasMore) {
         jsonp(url, null, (error, data) => {
@@ -46,19 +57,21 @@ export default {
           } else  {
             this.start += this.count
             console.log(data.subjects)
+            this.panel_data = Array.from(new Set(this.panel_data.concat(data.subjects)))
+            console.log(this.panel_data)
             if(data.total < this.start){
               this.hasMore = false
             }
           }
         })
       } else {
-        console.log('此页码数据请求完了')
+        console.log(`在${this.title}中的数据请求完了`)
       }
     }
   },
   mounted() {
     this.getMovieData(`${this.requestURL}?start=${this.start}&count=${this.count}`)
-    this.panel_data = in_theater
+    this.handleScroll()
   }
 }
 </script>
