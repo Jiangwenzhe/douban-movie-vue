@@ -6,7 +6,8 @@
       :key="index"
       :movie_data="data"
     ></Card>
-    <div class="loading"><span class="iconfont icon-jiazai_dan"></span></div>
+    <div v-if="hasMore" class="loading"><span class="iconfont icon-jiazai_dan"></span></div>
+    <div v-if="!hasMore" class="bottom-tip">-----没有数据啦-----</div>
   </div>
 </template>
 <script>
@@ -96,5 +97,11 @@ export default {
       display: inline-block;
       animation: .7s rotate linear infinite;
     }
+  }
+  .bottom-tip {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
 </style>
