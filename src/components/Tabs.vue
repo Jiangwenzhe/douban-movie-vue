@@ -8,15 +8,15 @@
     </transition>
   </main>
   <footer class="backdrop-blur">
-    <div class="active" @click="toggleTab('Top250')">
+    <div :class="[currentTab === 'Top250' ? 'active' : null]" @click="toggleTab('Top250')">
       <span class="iconfont icon-paihangbang"></span>
       <span>排行榜</span>
     </div>
-    <div @click="toggleTab('InTheater')">
+    <div :class="[currentTab === 'InTheater' ? 'active' : null]" @click="toggleTab('InTheater')">
       <span class="iconfont icon-dianying"></span>
       <span>正在上映</span>
     </div>
-    <div @click="toggleTab('SearchMovie')">
+    <div :class="[currentTab === 'SearchMovie' ? 'active' : null]" @click="toggleTab('SearchMovie')">
       <span class="iconfont icon-search"></span>
       <span>搜索</span>
     </div>
