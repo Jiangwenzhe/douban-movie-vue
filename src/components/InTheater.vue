@@ -1,5 +1,8 @@
 <template>
-  <Panel title="title"></Panel>
+  <Panel
+    title="title"
+    requestURL="https://api.douban.com/v2/movie/in_theaters"
+  ></Panel>
 </template>
 
 <script>

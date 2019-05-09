@@ -11,6 +11,7 @@
 <script>
 import Card from './Card'
 import in_theater from './../assets/in_theater.json'
+import jsonp from 'jsonp'
 
 export default {
   name: 'Panel',
@@ -20,7 +21,8 @@ export default {
       default: "In_theater"
     },
     requestURL:{
-
+      type: String,
+      default: null
     }
   },
   components: {
@@ -28,13 +30,34 @@ export default {
   },
   data() {
     return {
-      panel_data: {}
+      panel_data: {},
+      start: 0,
+      count: 20,
+      hasMore: true
     }
   },
-  methods() {
-
+  methods: {
+    getMovieData: function(url) {
+      console.log(url)
+      if(this.hasMore) {
+        jsonp(url, null, (error, data) => {
+          if(error) {
+            console.log(error)
+          } else  {
+            this.start += this.count
+            console.log(data.subjects)
+            if(data.total < this.start){
+              this.hasMore = false
+            }
+          }
+        })
+      } else {
+        console.log('此页码数据请求完了')
+      }
+    }
   },
   mounted() {
+    this.getMovieData(`${this.requestURL}?start=${this.start}&count=${this.count}`)
     this.panel_data = in_theater
   }
 }
