@@ -1,7 +1,7 @@
 <template>
   <Panel
-    title="title"
-    requestURL="https://api.douban.com/v2/movie/in_theaters"
+    :title="title"
+    :requestURL=url
   ></Panel>
 </template>
 
@@ -14,7 +14,8 @@ export default {
   },
   data() {
     return {
-      title: 'InTheater'
+      title: 'InTheater',
+      url: 'https://api.douban.com/v2/movie/in_theaters'
     }
   }
 }
