@@ -1,5 +1,8 @@
 <template>
-  <Panel :title="title"></Panel>
+  <Panel
+    :title="title"
+    :requestURL=url
+  ></Panel>
 </template>
 
 <script>
@@ -11,7 +14,8 @@ export default {
   },
   data() {
     return {
-      title: 'Top250'
+      title: 'Top250',
+      url: 'https://api.douban.com/v2/movie/top250'
     }
   }
 }
