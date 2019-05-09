@@ -54,18 +54,6 @@ main {
   height: 100%;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
-  .loading {
-    text-align: center;
-    font-size: 16px;
-  }
-  @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .loading .iconfont {
-    display: inline-block;
-    animation: .7s rotate linear infinite;
-  }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .4s;
   }
